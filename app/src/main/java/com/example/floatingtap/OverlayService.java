@@ -7,6 +7,7 @@ import android.graphics.PixelFormat;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.IBinder;
+import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -187,6 +189,12 @@ public class OverlayService extends Service {
 
         controlPanel = LayoutInflater.from(this).inflate(R.layout.control_panel, null);
 
+        // Get screen dimensions for landscape compatibility
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        windowManager.getDefaultDisplay().getMetrics(displayMetrics);
+        int screenHeight = displayMetrics.heightPixels;
+        int maxHeight = (int) (screenHeight * 0.85); // Use 85% of screen height
+
         int layoutType;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             layoutType = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
@@ -194,9 +202,17 @@ public class OverlayService extends Service {
             layoutType = WindowManager.LayoutParams.TYPE_PHONE;
         }
 
+        // Measure the panel to get its desired height
+        controlPanel.measure(
+                View.MeasureSpec.makeMeasureSpec(300, View.MeasureSpec.EXACTLY),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+        );
+        int desiredHeight = controlPanel.getMeasuredHeight();
+        int panelHeight = Math.min(desiredHeight, maxHeight);
+
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
-                WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.WRAP_CONTENT,
+                300, // Fixed width
+                panelHeight, // Constrained height
                 layoutType,
                 WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH, // Allow touches outside to pass through
                 PixelFormat.TRANSLUCENT
