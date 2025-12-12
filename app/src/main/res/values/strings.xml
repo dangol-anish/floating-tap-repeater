@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Floating Tap</string>
+    <string name="accessibility_service_description">Allows the app to perform automatic taps at marked locations on the screen. Required for tap repeater functionality.</string>
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/panel_background"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap Controls"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/markerCountText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Markers: 0"
+        android:textSize="14sp"
+        android:textColor="#4ecca3"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/addMarkerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+ Add Markers"
+        android:textSize="14sp"
+        android:backgroundTint="#5588ff"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/frequencyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Frequency: 2.4 taps/min"
+        android:textSize="12sp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <SeekBar
+        android:id="@+id/frequencySeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/startStopButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="▶ Start"
+        android:textSize="14sp"
+        android:backgroundTint="#4ecca3"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pattern Recording"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/patternStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No pattern recorded"
+        android:textSize="12sp"
+        android:textColor="#cccccc"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/recordPatternButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔴 Record Pattern"
+        android:textSize="12sp"
+        android:backgroundTint="#ff6b6b"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/playPatternButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="▶ Play Pattern"
+        android:textSize="12sp"
+        android:backgroundTint="#4ecca3"
+        android:layout_marginBottom="8dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear All"
+            android:textSize="12sp"
+            android:backgroundTint="#888888"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/closeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="✕ Exit"
+            android:textSize="12sp"
+            android:backgroundTint="#ff4444"
+            android:layout_marginStart="4dp" />
+    </LinearLayout>
+</LinearLayout>

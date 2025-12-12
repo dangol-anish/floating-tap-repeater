@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#1a1a2e">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Floating Tap Repeater"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginBottom="32dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Setup Instructions:"
+        android:textSize="18sp"
+        android:textColor="#4ecca3"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Enable Accessibility Service\n2. Enable Overlay Permission\n3. Start the floating bubble"
+        android:textSize="14sp"
+        android:textColor="#cccccc"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/enableAccessibilityButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Enable Accessibility"
+        android:textSize="16sp"
+        android:backgroundTint="#5588ff"
+        android:padding="16dp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/enableOverlayButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Enable Overlay Permission"
+        android:textSize="16sp"
+        android:backgroundTint="#5588ff"
+        android:padding="16dp"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/startServiceButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. ▶ START FLOATING BUBBLE"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#4ecca3"
+        android:padding="16dp"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="\nHow to use:\n• Tap the floating bubble to open controls\n• Click 'Add Markers' and tap screen where you want taps\n• Set frequency and press Start"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
